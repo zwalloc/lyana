@@ -1,0 +1,18 @@
+type: executable
+name: ".tool"
+
+load-context.!standalone:
+  enabled: false
+
+load-context.standalone:
+  deps:
+    - .lib
+
+  artifact-name: targeter
+  re-dev-deploy-path: "C:\\targeter"
+
+  actions:
+    - install:
+        on: deploy
+        to:
+          - ${re-dev-deploy-path}
